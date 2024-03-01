@@ -1,0 +1,1373 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap");
+
+:root {
+  --second-child-width: 300px;
+  --first-child-width: 370px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+.mt-10 {
+  margin-top: 130px;
+}
+
+.mt-8 {
+  margin-top: 80px;
+}
+
+p {
+  margin: 0 !important;
+}
+
+b {
+  font-weight: 700;
+}
+
+.background-top {
+  width: 100%;
+  height: 1.3rem;
+  position: absolute;
+  background-color: #dcdcdc;
+  margin-top: -20px;
+}
+
+.ofert {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 82px;
+  z-index: 3;
+}
+
+.ofert-child-1 {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transform: rotate(-0.5deg);
+}
+
+.ofert-child-2 {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.discount {
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  line-height: 3.6rem;
+}
+
+.resalt {
+  background-color: #0b8f3e;
+}
+
+.resalt-child {
+  padding: 5px;
+}
+
+.line-height {
+  line-height: 3.1rem;
+}
+
+.body-background {
+  min-height: 100vh;
+  background: url("./logo/background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 81px;
+}
+
+.headernn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.headernn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.headernn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(174, 243, 197, 0.4),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.headernn:hover::after {
+  left: 100%;
+}
+
+.logo {
+  width: 100%;
+  max-width: 231px;
+}
+
+.navbarnn .sources {
+  font-size: 1.15rem;
+  color: #4f4f51;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+
+.sources {
+  transition: 0.4s ease;
+}
+
+.sources:hover {
+  color: #069544;
+}
+
+#check {
+  display: none;
+}
+
+.icons {
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 1111px) {
+  .headernn {
+    padding: 1.3rem 5%;
+  }
+}
+
+@media (max-width: 1181px) {
+  .icons {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  .navbarnn {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+
+  #check:checked ~ .navbarnn {
+    height: 17.7rem;
+  }
+
+  .navbarnn .sources {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    transition: 0.3s ease;
+    opacity: 0;
+  }
+
+  #check:checked ~ .navbarnn .sources {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(0.15s * var(--i));
+  }
+
+  @media (max-width: 887px) {
+    .discount {
+      font-size: 2rem;
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      text-align: center;
+      line-height: 2.3rem;
+    }
+
+    .line-height {
+      line-height: 2rem;
+    }
+
+    .paragraph {
+      font-size: 1.7rem !important;
+      font-weight: 900;
+    }
+  }
+}
+
+@media (max-width: 596px) {
+  .discount {
+    font-size: 1.4rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.9rem;
+  }
+
+  .line-height {
+    line-height: 1.2rem;
+  }
+}
+
+@media (max-width: 547px) {
+  .discount {
+    font-size: 1rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2rem;
+  }
+
+  .line-height {
+    line-height: 0.9rem;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 190px;
+  }
+
+  .paragraph {
+    font-size: 1.5rem !important;
+    font-weight: 900;
+  }
+}
+
+/*-------- Body Style ------*/
+
+.first-body, .second-body, .fourth-body, .fiveth-body, .sixth-body, .seventh-body, .eigth-body{ 
+  min-height: 100vh;
+  background: url("img/oip.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: repeat;
+  padding-bottom: 30px;
+}
+
+.body {
+  background: url("img/oip.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: repeat;
+  padding: 30px 0;
+}
+
+.body-container {
+  background-color: transparent;
+}
+
+.title-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 40px 0;
+  width: 100%;
+  height: 30px;
+  background-color: #dfdfdf;
+}
+
+.paragraph {
+  font-size: 2.3em;
+  font-weight: 900;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-container {
+  max-width: 1800px;
+}
+
+.catalog-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  column-gap: 30px;
+  place-items: center;
+  grid-template-columns: 50% 50%;
+}
+
+.grid-container {
+  width: 700px;
+  height: 100%;
+}
+
+@media (min-width: 1338px) and (max-width: 1500px) {
+  .grid-container {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 100%;
+    min-width: 628px !important;
+  }
+
+  .media {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 100%;
+    min-width: 700px !important;
+  }
+
+  .grid-container-lavadora {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 740px !important;
+  }
+
+
+  .lavadora-1 {
+    margin: 0 !important;
+    position: inherit !important;
+  }
+
+  .lavadora-2 {
+    margin: 0 !important;
+    position: relative !important;
+    top: 70px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: initial !important;
+    padding: 0 10px;
+    grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+  }
+
+  .catalog-container {
+    width: 1300px !important;
+    height: 580px;
+  }
+
+  .body-container {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1338px) {
+  .grid-container {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 100%;
+    min-width: 628px !important;
+  }
+
+  .media {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 100%;
+    min-width: 700px !important;
+  }
+  
+  .grid-container-lavadora {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 680px !important;
+  }
+
+  .lavadora-1 {
+    margin: 0 !important;
+    position: inherit !important;
+  }
+
+  .lavadora-2 {
+    margin: 0 !important;
+    position: relative !important;
+    top: 70px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: initial !important;
+    padding: 0 10px;
+    grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+  }
+  .catalog-container {
+    width: 1100px !important;
+    height: 550px;
+  }
+
+  .body-container {
+    justify-content: center;
+  }
+}
+
+  .grid-container-lavadora {
+    width: 700px;
+  }
+
+
+
+@media (min-width: 1000px) and (max-width: 1338px) {
+  .grid-container {
+    transform: scale(0.7) !important;
+    transition: none;
+    width: 100%;
+    /* min-width: 600px !important; */
+  }
+
+  .grid-container-lavadora {
+    transform: scale(0.7) !important;
+    transition: none;
+    /* width: 620px !important; */
+  }
+
+  .lavadora-1 {
+    margin: 0 !important;
+    position: inherit !important;
+  }
+
+  .lavadora-2 {
+    margin: 0 !important;
+    position: relative !important;
+    top: 70px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: initial !important;
+    padding: 0 10px;
+    grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+  }
+  .catalog-container {
+    width: 910px !important;
+  }
+
+  .body-container {
+    justify-content: center;
+  }
+
+  .m-mayor-40 {
+    margin-top: 60px;
+  }
+
+  .first {
+    margin-top: -90px;
+  }
+}
+
+@media (min-width: 807px) and (max-width: 1000px) {
+  .grid-container {
+    transform: scale(0.7) !important;
+    transition: none;
+    width: 500px !important;
+  }
+
+  .grid-container-lavadora {
+    transform: scale(0.7) !important;
+    transition: none;
+    width: 470px !important;
+  }
+
+  .grid-childs-lavadora {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .grid-childs {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .lavadora-1 {
+    margin: 0 !important;
+    position: inherit !important;
+  }
+
+  .lavadora-2 {
+    margin: 0 !important;
+    position: relative !important;
+    top: 70px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: initial !important;
+    padding: 0 10px;
+    grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+  }
+  .catalog-container {
+    width: 780px !important;
+    height: 800px;
+    column-gap: 0 !important;
+  }
+
+  .body-container {
+    justify-content: center;
+  }
+
+  .energia-colombia {
+    width: 200px !important;
+    height: 250px !important;
+    margin-bottom: 90px;
+  }
+
+  .air-mabe {
+    width: 400px !important;
+    margin-top: 160px !important;
+  }
+
+  .imagenes-container {
+    height: 400px !important;
+  }
+
+  .button-price {
+    margin-top: 100px !important;
+  }
+
+  .swnn {
+    width: 400px !important;
+  }
+
+  .img-figure {
+    width: 400px !important;
+  }
+
+  .first {
+    margin-top: -110px;
+  }
+
+  .second {
+    margin-top: -50px;
+  }
+}
+
+@media (min-width: 647px) and (max-width: 807px) {
+  .grid-container {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 600px;
+  }
+
+  .grid-container-lavadora {
+    transform: scale(0.8) !important;
+    transition: none;
+    width: 660px;
+  }
+
+  .grid-childs-lavadora {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .grid-childs {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .lavadora-1 {
+    margin: 0 !important;
+    position: inherit !important;
+  }
+
+  .lavadora-2 {
+    margin: 0 !important;
+    position: relative !important;
+    top: 70px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: initial !important;
+    padding: 0 10px;
+    grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+  }
+
+  .body-container {
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+  }
+
+  .energia-colombia {
+    width: 200px !important;
+    height: 250px !important;
+    margin-bottom: 90px;
+  }
+
+  .air-mabe {
+    width: 500px !important;
+    margin-top: 160px !important;
+  }
+
+  .imagenes-container {
+    height: 400px !important;
+  }
+
+  .button-price {
+    margin-top: 100px !important;
+  }
+
+  .swnn {
+    width: 400px !important;
+  }
+
+  .img-figure {
+    width: 400px !important;
+  }
+
+  .first {
+    margin-top: -45px !important;
+  }
+
+  .second {
+    margin-bottom: 520px !important;
+  }
+
+  .six {
+    margin-bottom: 468px !important;
+  }
+
+  .tamm {
+    margin-top: 75px;
+    width: 380px;
+    grid-template-rows: 550px 550px;
+    grid-gap: 220px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  }  
+
+  .tamm-1-5 {
+    margin-top: 105px;
+    width: 380px;
+    grid-template-rows: 530px 530px;
+    grid-gap: 340px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 170px;
+  } 
+
+  .tamm-1-5-lavadora {
+    margin-top: 105px;
+    width: 450px;
+    grid-template-rows: 530px 530px;
+    grid-gap: 510px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 170px;
+  } 
+
+  .tamm-2 {
+    margin-top: 210px;
+    width: 380px;
+    grid-template-rows: 520px 520px;
+    grid-gap: 350px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  }  
+
+  .mbb {
+    margin-bottom: 310px !important;
+  }
+  
+}
+
+@media (min-width: 450px) and (max-width: 647px) {
+  .body-container{
+    width: 424px !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+  }
+  
+  .catalog-container {
+    width: 440px !important;
+    height: 400px;
+    display: flex !important;
+    flex-direction: column !important;
+    position: static;
+  }
+
+  .grid-container {
+    transform: scale(0.7) !important;
+    transition: none;
+    width: 470px ;
+    position: sticky;
+  }
+
+  .grid-container-lavadora {
+    transform: scale(0.7) !important;
+    transition: none;
+    width: 470px !important;
+    position: sticky;
+  }
+
+  .grid-childs-lavadora {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .grid-childs {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .lavadora-1 {
+    margin: 0 !important;
+    position: inherit !important;
+  }
+
+  .lavadora-2 {
+    margin: 0 !important;
+    position: relative !important;
+    top: 70px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: initial !important;
+    padding: 0 10px;
+    grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+  }
+  .energia-colombia {
+    width: 200px !important;
+    height: 250px !important;
+    margin-bottom: 90px;
+  }
+
+  .air-mabe {
+    width: 500px !important;
+    margin-top: 160px !important;
+  }
+
+  .imagenes-container {
+    height: 400px !important;
+  }
+
+  .button-price {
+    margin-top: 100px !important;
+  }
+
+  .swnn {
+    width: 400px !important;
+  }
+
+  .img-figure {
+    width: 400px !important;
+  }
+
+  .first {
+    margin-top: -80px !important;
+  }
+
+  .four {
+    margin-top: -85px !important;
+  }
+
+ .tamm {
+    margin-top: 75px;
+    width: 380px;
+    grid-template-rows: 530px 530px;
+    grid-gap: 160px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  }  
+
+  .thrid {
+    margin-top: 310px !important;
+  }
+
+  .eigh {
+    margin-top: -100px !important;
+  }
+
+  .tamm-1-5 {
+    margin-top: 105px;
+    width: 370px;
+    grid-template-rows: 530px 530px;
+    grid-gap: 230px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  } 
+
+  .tamm-1-5-lavadora {
+    margin-top: 25px;
+    width: 380px;
+    grid-template-rows: 530px 530px;
+    grid-gap: 400px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  } 
+
+  .tamm-2 {
+    margin-top: 90px;
+    width: 380px;
+    grid-template-rows: 520px 520px;
+    grid-gap: 270px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  }  
+
+  .six {
+    margin-top: -110px;
+    margin-bottom: 310px;
+  }
+}
+
+@media (min-width:100px) and (max-width: 450px) {
+
+  .body-container{
+    width: 424px !important;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .catalog-container {
+    width: 440px !important;
+    /* height: 1200px !important; */
+    display: flex !important;
+    flex-direction: column !important;
+    position: static;
+  }
+
+  .grid-container {
+    transform: scale(0.55) !important;
+    transition: none;
+    width: 470px ;
+    position: sticky;
+  }
+
+  .grid-container-lavadora {
+    transform: scale(0.55) !important;
+    transition: none;
+    width: 490px !important;
+    position: sticky;
+  }
+
+  .grid-childs-lavadora {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .grid-childs {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .lavadora-1 {
+    margin: 0 !important;
+    position: inherit !important;
+  }
+
+  .lavadora-2 {
+    margin: 0 !important;
+    position: relative !important;
+    top: 70px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: initial !important;
+    padding: 0 10px;
+    grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+  }
+  .energia-colombia {
+    width: 200px !important;
+    height: 250px !important;
+    margin-bottom: 90px;
+  }
+
+  .air-mabe {
+    width: 500px !important;
+    margin-top: 160px !important;
+  }
+
+  .imagenes-container {
+    height: 400px !important;
+  }
+
+  .button-price {
+    margin-top: 100px !important;
+  }
+
+  .swnn {
+    width: 400px !important;
+  }
+
+  .img-figure {
+    width: 400px !important;
+  }
+
+  .first {
+    margin-top: -80px !important;
+  }
+
+ .tamm {
+    margin-top: 75px;
+    width: 390px !important;
+    grid-template-rows: 400px 400px;
+    grid-gap: 140px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 130px;
+    position: inherit;
+  }  
+
+  .tamm-1-5 {
+    margin-top: 75px;
+    width: 370px;
+    grid-template-rows: 400px 400px;
+    grid-gap: 100px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  } 
+
+  .tamm-2 {
+    margin-top: 38px !important;
+    width: 370px;
+    grid-template-rows: 400px 400px;
+    grid-gap: 118px !important;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  }  
+
+  .mbb {
+    margin-bottom: 40px !important;
+  }
+
+  .first {
+    margin-top: -80px !important;
+  }
+
+  .four {
+    margin-top: -85px !important;
+  }
+
+  .eigh {
+    margin-bottom: 120px !important;
+  }
+
+  .nine {
+    margin-top: -70px !important;
+    margin-bottom: 40px !important;
+  }
+
+ .tamm {
+    margin-top: 75px;
+    width: 350px;
+    grid-template-rows: 530px 530px;
+    grid-gap: 40px ;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1px;
+  }  
+
+  .thrid {
+    margin-top: 220px !important;
+  }
+
+  .eigh {
+    margin-top: -100px !important;
+  }
+
+  .tamm-1-5 {
+    margin-top: 105px;
+    width: 370px;
+    grid-template-rows: 530px 530px;
+    grid-gap: 75px !important;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 130px;
+  } 
+
+  .tamm-1-5-lavadora {
+    width: 380px;
+    grid-template-rows: 400px 400px;
+    margin-top: -80px;
+    margin-left: 20px;
+    grid-gap: 360px !important;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 160px;
+  } 
+
+  .tamm-2 {
+    margin-top: 90px;
+    width: 380px;
+    grid-template-rows: 520px 520px;
+    grid-gap: 100px !important;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: unset;
+    margin-bottom: 13px;
+  }  
+
+  .six {
+    margin-top: -190px;
+    margin-bottom: 70px;
+  }
+
+  .six-second{
+    margin-top: -90px !important;
+  }
+}
+
+.grid-childs {
+  /* height: 100%; */
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  background: url(img/lienzo-fondo.jpg);
+  border: 2px solid #000000;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.grid-childs-lavadora {
+  /* height: 100%; */
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 62% 36%;
+  background: url(img/lienzo-fondo.jpg);
+  border: 2px solid #000000;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.cards-child1 {
+  grid-template-rows: 400px 100px;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  width: 100%;
+  float: none !important;
+  position: static !important;
+}
+
+.cards-child2 {
+  display: grid;
+  width: 100%;
+  /* float: none !important;
+    position: static !important; */
+}
+
+.card-description {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(1, 0.2fr 0.1fr 0.2fr);
+}
+
+.card-padding {
+  width: 100%;
+  padding: 10px 10px 20px 0;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #000;
+  margin-left: 20px;
+}
+
+.circle-gris {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-left: 20px;
+  background-color: #4a494e;
+}
+
+.circle-gris-2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-left: 20px;
+  background-color: #afaeb3;
+}
+
+.circle-black {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #000;
+  border: 2px solid #000;
+  margin-left: 20px;
+}
+
+.circle-aaa {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #aaaaaa;
+  border: 2px solid #000;
+  margin-left: 20px;
+}
+
+.color-description {
+  font-family: "Popins", sans-serif;
+  font-size: 20px;
+}
+
+.card-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  margin: auto 0;
+}
+
+.card-aboutus {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.button-price {
+  font-family: "Montserrat", sans-serif;
+  padding: 8px 20px;
+  background-color: #0b8f3e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  /* margin-top: 25px; */
+}
+
+.button-price:hover {
+  background-color: #228447;
+}
+
+.button-margin {
+  margin-top: 130px !important;
+}
+
+/* Cards Imgs  */
+
+.energia-colombia {
+  width: 50%;
+  height: 50%;
+}
+
+.lavadora-1 {
+  margin-bottom: 120px;
+  margin-right: 70px;
+  width: 250px;
+  height: 330px;
+  position: absolute;
+}
+
+.lavadora-2 {
+  margin-left: 250px;
+  margin-top: 280px;
+  position: aboslute;
+  width: 45%;
+  height: 25%;
+}
+
+.img-figure {
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+}
+
+.swnn {
+  width: 95%;
+  height: 95%;
+}
+
+.air-mabe {
+  width: 100%;
+}
+
+.f-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.f-img-container-lavadoras {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+
+.logos-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mega {
+  position: absolute;
+  width: 150px;
+  height: 70px;
+  margin-top: 40px;
+  padding-right: 20px;
+}
+
+.somos-blue {
+  position: relative;
+  margin-top: 40px;
+  right: 150px;
+  display: block;
+  width: 180px;
+  height: 40px;
+}
+
+.mabe {
+  width: 120px;
+  height: 150px;
+  position: inherit;
+}
+
+.mabe-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+}
+
+/* 100k */
+
+.grid-content {
+  width: 100% !important;
+  max-width: 2100px;
+  display: inline-block;
+  position: inherit;
+  overflow: hidden;
+}
+
+.image-width{
+  width: 85%;
+  height: 100%;
+}
+
+.boxShadow {
+  position: relative;
+  display: inline-block;
+}
+
+.boxShadow img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.boxShadow:hover img {
+  transform: scale(0.96); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

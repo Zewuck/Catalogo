@@ -1,0 +1,27 @@
+Inicio del proyecto  6 / 01 / 24
+Fecha propuesta     20 / 01 / 24
+Finalizada personal 13 / 01 / 24
+mostrar avances     13 / 01 / 24
+
+Catalogo grupo EPM.
+
+- Hogar:
+	- Muebles
+	Congelador
+	Aires Acondicionados
+	Neveras
+	Ventiladores
+- Cocina:
+	Tapizados
+	Estufas
+	Ollas
+	Hornos
+	Freidoras
+	Gasodomesticos
+- Pinturas:
+	pinturas de todo tipo
+
+- Tecnología
+	Celulares
+	Televisores
+
